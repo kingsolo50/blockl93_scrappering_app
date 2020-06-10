@@ -5,12 +5,6 @@ const cheerio = require('cheerio');
 const fs = require('fs');
 const url = 'https://www.knightfrank.com/property-for-sale/kenya';
 
-/**
- * Inside the main function we'll place all the required code
- * that will be used in the scraping process.
- * The reason why we create an async function is to use
- * the power of async programming  that comes with puppeteer.
- */
 async function main() {
   
   const browser = await puppeteer.launch({
