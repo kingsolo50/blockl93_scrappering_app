@@ -36,7 +36,7 @@ const   app = express();
             res.sendFile(path.join(__dirname, 'public/index.html'));
         });
 
-        // 404 ERROR HANDLER
+        // 404 ERROR HANDLER 
         app.use(function (req, res, next) {
             var err = new Error('Not Found');
             err.status = 404;
