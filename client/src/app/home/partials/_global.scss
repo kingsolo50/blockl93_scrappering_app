@@ -1,0 +1,90 @@
+.card {
+  
+  border: none;
+
+  img {
+    max-height: 215px;
+  }
+
+  .card-body {
+    padding: 1rem;
+  }
+
+}
+.page-link {
+  color: #007bff !important;
+}
+
+/* ========================================================================== */
+/* CAROUSEL */
+/* ========================================================================== */
+.carousel-inner {
+  height: 450px;
+
+  .carousel-item {
+    height: 450px;
+
+    img {
+      max-height: 450px;
+    }
+  }
+}
+
+/* ========================================================================== */
+/* CAROUSEL TEXT */
+/* ========================================================================== */
+.slideH1Text {
+  position: relative;
+  top: 3em;
+  left: -10em;
+}
+
+.slideH2Text {
+  position: relative;
+  top: 4em;
+  left: -10em;
+}
+
+.slideDescriptionText {
+  position: relative;
+  top: 5em;
+  left: -10em;
+}
+
+/* ========================================================================== */
+/* JUMBOTRON */
+/* ========================================================================== */
+.jumbotron {
+  background: url(https://images.pexels.com/photos/60638/namibia-africa-landscape-nature-60638.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: white;
+  height: 100vh;
+}
+
+/* ========================================================================== */
+/*  */
+/* ========================================================================== */
+.bg-lightNav {
+  background-color: white !important;
+}
+
+.bg-light {
+  background-color: transparent !important;
+}
+
+.dropdown-toggle[_ngcontent-c1] {
+  min-width: 50px;
+}
+
+.dropdown-menu.show {
+  display: inline-flex;
+}
+
+.cardImgHeight {
+  img {
+    height: 250px;
+  }
+}

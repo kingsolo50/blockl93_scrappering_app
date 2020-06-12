@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col search">
+      <h1>Search</h1>
+          <small>Search by town or location or <a routerLink="/explore"><u>view all listings</u></a></small>
+          <div id="search" class="input-group mb-3 input-group-lg">          
+            <input type="text" class="form-control searchBar" name="search" type="search"
+              placeholder="e.g. Kitengella or Thika &crarr;" #searchBox
+              (blur)="onEnter(searchBox.value)" (keyup.enter)="onEnter(searchBox.value)"
+              aria-label="Text input with dropdown button">            
+          </div>     
+    </div>
+    <div class="col-12 loading">
+      <h1>Loading...</h1>
+    </div>
+    <div class="col-12">
+      <button class="btn btn-primary" id="nextPage" (click)="nextPage()">Next Page</button>
+      <button class="btn btn-primary" id="prevPage" (click)="prevPage()">Previous Page</button>
+    </div>
+    <div class="col-12">
+      <div *ngIf="data">  
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-12" *ngFor="let p of data.data; let i = index">
+              <div class="card" style="width: 21rem;" *ngIf="p?.image.length > 0">          
+                <img src="{{p?.image}}" class="card-img-top img-fluid p-1" alt="{{p?.town}}">
+                <div class="card-body">
+                  <p class="card-text">
+                    Town: &nbsp;<strong>{{ p?.town | titlecase }}</strong>
+                  </p>
+                  <p class="card-text">
+                    Location: &nbsp;{{ p?.location | titlecase }}
+                  </p>
+                  <p>
+                    Size: &nbsp;{{p?.size }}
+                  </p>
+                  <p>
+                    Type: &nbsp;{{p?.type }}
+                  </p> 
+                  <p>
+                    Price: &nbsp;{{p?.price }}
+                  </p>              
+                </div>
+                <div class="card-footer text-muted">
+                  <div class="row">
+                    <div class="col-8">
+                      <!-- <small>Posted: {{p?.created | amTimeAgo}}</small> -->
+                    </div>
+                    <div class="col-2">
+                      <!-- <i class="far fa-eye" routerLink="/product/{{ p ._id }}"></i> -->
+                    </div>
+                    <div class="col-2">
+                      <small aria-disabled="true">
+                        <div class="fb-post" data-href="www.blockl93.com/explore/"><i class="fas fa-share"></i> </div>
+                      </small>
+                    </div>
+                  </div>
+                </div>
+          </div>          
+        </div>
+      </div>
+    </div> 
+  </div>
+</div>

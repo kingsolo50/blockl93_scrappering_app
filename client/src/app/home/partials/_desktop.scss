@@ -1,0 +1,39 @@
+@mixin desktop {
+   .logo {
+     width: 75%;
+     top: -3%;
+   }
+
+   nav {
+     .navbar-brand {
+       margin-right: -3rem;
+     }
+   }
+
+   #search {
+     .searchBar {
+       width: 350px;
+     }
+
+     button {
+
+       // margin-left: 40%;
+       .btn {
+         font-size: 1rem;
+       }
+     }
+   }
+
+  .carousel {
+    a {
+      color: whitesmoke;
+    }
+
+    a:hover {
+      color: blue;
+    }
+
+    cursor: pointer;
+  }
+  
+}

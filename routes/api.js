@@ -2,17 +2,8 @@ require('dotenv').config();
 
 const express = require('express');
 const router = express.Router();
-const mongoose = require('mongoose');
-const Api = require('../model/api');
 const puppeteer = require('puppeteer');
 const cheerio = require('cheerio');
-const fs = require('fs');
-// const url = `https://www.buyrentkenya.com/plots-land-for-sale?page=${number}`;
-
-// function wait (ms) {
-//     return new Promise(resolve => setTimeout(() => resolve(), ms));
-// }
-// wait(500); 
 
 //* Land, plots for-sale
 /** 
@@ -66,7 +57,7 @@ router.get('/buy-rent-kenya/plots-land-for-sale/:number', function(req, res) {
         
             // Array object d
             landData.push({
-                image: 'www.buyrentkenya.com'+image,
+                image: 'https://www.buyrentkenya.com'+image,
                 town: location,
                 type: type,
                 location: location,

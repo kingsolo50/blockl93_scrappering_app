@@ -8,11 +8,7 @@ const   express = require('express'),
         morgan = require('morgan'), 
         api = require('./routes/api'),
         HTTP_PORT = 3000;
-        
-        //* 
-
-        require('./middleware/dbconnection');
-        
+                
         //* Express init
         
 const   app = express();

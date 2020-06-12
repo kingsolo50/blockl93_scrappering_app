@@ -1,0 +1,116 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
+
+/* You can add global styles to this file, and also import other style files */
+/* ========================================================================== */
+/* GLOBAL COLOR VARIABLES */
+/* ========================================================================== */
+
+$c1: #5DFF00;
+$c2: #41B300;
+$c3: #6EFF19;
+$c4: #B000B3;
+$c5: #FB00FF;
+$c6: rgb(43, 1, 47);
+$c7: #333;
+
+/* ========================================================================== */
+/* SPINNER CSS */
+/* ========================================================================== */
+ body {
+    height: 100%;
+    font-family: "Market Sans", Arial, sans-serif;
+    // font-family: ModernEra, sans-serif;
+    font-size: smaller;
+    color: #555;
+    background-color: white;
+    line-height: 22.4px;
+    vertical-align: baseline;
+    letter-spacing: normal;
+    word-spacing: 0px;
+ }
+
+ .app-loading {
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   height: 100%;
+ }
+
+ .app-loading .spinner {
+   height: 200px;
+   width: 200px;
+   animation: rotate 2s linear infinite;
+   transform-origin: center center;
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   margin: auto;
+ }
+
+ .app-loading .spinner .path {
+   stroke-dasharray: 1, 200;
+   stroke-dashoffset: 0;
+   animation: dash 1.5s ease-in-out infinite;
+   stroke-linecap: round;
+   stroke: #ddd;
+ }
+
+ @keyframes rotate {
+   100% {
+     transform: rotate(360deg);
+   }
+ }
+
+ @keyframes dash {
+   0% {
+     stroke-dasharray: 1, 200;
+     stroke-dashoffset: 0;
+   }
+
+   50% {
+     stroke-dasharray: 89, 200;
+     stroke-dashoffset: -35px;
+   }
+
+   100% {
+     stroke-dasharray: 89, 200;
+     stroke-dashoffset: -124px;
+   }
+ }
+
+/* ========================================================================== */
+/* GLOBAL STYLE SETTINGS */
+/* ========================================================================== */
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: "Market Sans", Arial, sans-serif;
+    text-transform: none;
+}
+
+/* ========================================================================== */
+/* CONTAINERS */
+/* ========================================================================== */
+// .container,
+.container-fluid {
+  background-color: white;
+}
+
+/* ========================================================================== */
+/* SEARCH */
+/* ========================================================================== */
+.search {
+  background: url("https://images.pexels.com/photos/1309766/pexels-photo-1309766.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") no-repeat;
+  background-size: cover;
+  color: white;
+  // padding-bottom: 3em;
+  padding: 1em;
+  margin-top: 1em;
+}

@@ -1,0 +1,95 @@
+{
+  "short_name": "BLKL93",
+  "name": "Block L93",
+  "description": "Connecting individuals, businesses and investors using the power of the World Wide Web.",
+  "author": "Solomon kamanu",
+  "keywords": "Kenyan produce, kenyan products, land for sale in kenya, plots for sale in kenya, invest in kenya, buy a plot in kenya, kenyan farmers market",
+  "x-ua-compatible": "IE=edge",
+  "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+  "robots": "index, follow",
+  "geo.region": "UK-LDN, UK-Essex, UK, London, Essex",
+  "apple-mobile-web-app-capable": "yes",
+  "language": "en-GB",
+  "copyright": "blockl93.com, All rights reserved",
+  "icons": [{
+      "type": "image/x-icon",
+      "src": "./img/favicon.ico",
+      "size": "auto"
+    },
+    {
+      "type": "apple-touch-icon-precomposed",
+      "src": "./img/apple-touch-icon-57x57.png",
+      "size": "57x57"
+    },
+    {
+      "type": "apple-touch-icon-precomposed",
+      "src": "./img/apple-touch-icon-114x114.png",
+      "size": "114x114"
+    },
+    {
+      "type": "apple-touch-icon-precomposed",
+      "src": "./img/apple-touch-icon-72x72.png",
+      "size": "72x72"
+    },
+    {
+      "type": "apple-touch-icon-precomposed",
+      "src": "./img/apple-touch-icon-144x144.png",
+      "size": "144x144"
+    },
+    {
+      "type": "apple-touch-icon-precomposed",
+      "src": "./img/apple-touch-icon-60x60.png",
+      "size": "60x60"
+    },
+    {
+      "type": "apple-touch-icon-precomposed",
+      "src": "./img/apple-touch-icon-120x120.png",
+      "size": "120x120"
+    },
+    {
+      "type": "apple-touch-icon-precomposed",
+      "src": "./img/apple-touch-icon-76x76.png",
+      "size": "76x76"
+    },
+    {
+      "type": "apple-touch-icon-precomposed",
+      "src": "./img/apple-touch-icon-152x152.png",
+      "size": "152x152"
+    },
+    {
+      "type": "icon",
+      "src": "./img/favicon-196x196.png",
+      "size": "196x196"
+    },
+    {
+      "type": "icon",
+      "src": "./img/favicon-512x512.png",
+      "size": "512x512"
+    },
+    {
+      "type": "icon",
+      "src": "./img/favicon-128x128.png",
+      "size": "128x128"
+    },
+    {
+      "type": "icon",
+      "src": "./img/favicon-32x32.png",
+      "size": "32x32"
+    },
+    {
+      "type": "icon",
+      "src": "./img/favicon-16x16.png",
+      "size": "16x16"
+    },
+    {
+      "type": "icon",
+      "src": "./img/favicon-96x96.png",
+      "size": "96x96"
+    }
+  ],
+  "start_url": "/index.html",
+  "display": "standalone",
+  "theme_color": "#e40101",
+  "background_color": "#ffffff",
+  "orientation": "portrait"
+}

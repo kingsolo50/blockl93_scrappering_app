@@ -1,0 +1,41 @@
+@mixin mobile {
+    // @include nav;
+
+    .logo {
+      width: 50%;
+      // padding: 5% 0;
+    }
+
+    .navbar-toggler {
+      padding: 0;
+      border: none;
+      border-radius: 0;
+     
+    }
+
+    .searchButton {
+      margin-top: 5% !important;
+    }
+
+    /* ========================================================================== */
+    /* CAROUSEL */
+    /* ========================================================================== */
+    .carousel-inner[_ngcontent-c3],
+    .active {
+      max-height: 250px !important;
+    }
+
+    .carousel-indicators {
+      display: none !important;
+    }
+
+    .carousel {
+      a {
+        color: whitesmoke;
+      }
+      a:hover {
+        color: blue;
+      }
+      cursor: pointer;
+    }
+}
