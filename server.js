@@ -45,6 +45,6 @@ const   app = express();
 
         //*
 
-        app.listen(HTTP_PORT || process.env.PORT, () => {
+        app.listen(process.env.PORT || HTTP_PORT, () => {
             console.log(`HTTP_PORT connection: ${HTTP_PORT || process.env.PORT}`);
         }); 
