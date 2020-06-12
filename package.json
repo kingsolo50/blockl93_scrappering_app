@@ -1,15 +1,18 @@
 {
-  "name": "BlockL93",
+  "name": "BlockL93v5",
   "version": "5.0.0",
-  "description": "",
+  "description": "New version of blockl93 2020",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js",
+    "start": "node server.js",
     "heroku": "git push heroku master"
   },
+  "engines": {
+    "node": "10.x"
+  },
   "keywords": [],
-  "author": "",
+  "author": "Solomon K Kamanu",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.2",

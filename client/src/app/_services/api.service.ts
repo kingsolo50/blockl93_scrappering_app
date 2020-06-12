@@ -7,7 +7,7 @@ export class ApiService {
 
   data: any;
 
-  private apiUrl: string = `http://localhost:3000/api/buy-rent-kenya/plots-land-for-sale`;
+  private apiUrl: string = `http://localhost:8000/api/buy-rent-kenya/plots-land-for-sale`;
   private webApi: string = `/api/buy-rent-kenya/plots-land-for-sale`; 
 
   constructor(private http: HttpClient) { }
