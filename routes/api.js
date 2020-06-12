@@ -23,9 +23,11 @@ router.get('/buy-rent-kenya/plots-land-for-sale/:number', function(req, res) {
     
         // Using the newly created page, navigate to url
         await page.goto(`https://www.buyrentkenya.com/plots-land-for-sale?page=${number}`, {waitUntil: 'load'});
-    
+
         // Get page content
-        const html = await page.content();
+        const html = await page.content(); // Original code
+        
+        await page.waitFor('.property-item');
     
         // Load content in cheerio
         const $ = cheerio.load(html);
@@ -39,13 +41,11 @@ router.get('/buy-rent-kenya/plots-land-for-sale/:number', function(req, res) {
         // Check the length
         console.log(data.length);
         // return console.log(data.attr());
-    
-        const numbers = /^[0-9]+$/;
-          
+              
         // Loop through grabbing data
         data.each( function() {
         
-            const image = $(this).find('img').attr('data-src');
+            // const image = $(this).find('img').attr('data-src');
             const town = $(this).find('').text().trim();
             const location = $(this).find('.property-location').text().trim();
             const type = $(this).find('.property-title').text().trim();
@@ -57,7 +57,7 @@ router.get('/buy-rent-kenya/plots-land-for-sale/:number', function(req, res) {
         
             // Array object d
             landData.push({
-                image: 'buyrentkenya.com'+image,
+                // image: 'https://www.buyrentkenya.com'+image,
                 town: location,
                 type: type,
                 location: location,
@@ -86,25 +86,12 @@ router.get('/buy-rent-kenya/plots-land-for-sale/:number', function(req, res) {
 
 });
 
-//*todo Flats & apartments for-sale
+//*todo Search API
+// location url 
+// https://www.buyrentkenya.com/plots-land-for-sale/nairobi
+// add location to url
+// https://www.buyrentkenya.com/plots-land-for-sale/westlands
 router.get('/buy-rent-kenya/flats-apartments-for-sale/:number', (req, res) => {});
 
-//*todo Houses for sale
-router.get('/buy-rent-kenya/houses-for-sale/:number', (req, res) => {});
-
-//*todo Commercial land for sale
-router.get('/buy-rent-kenya/commercial-property-for-sale/:number', (req, res) => {});
-
-/* Post API data to db. */
-router.post('/', function(req, res, next) {
-    
-    
-    const knightFrank = require('../assets/scripts/scrape_knightfrank');
-    const pigiaMe = require('../assets/scripts/scrape_pigiame');
-    const buyKenya = require('../assets/scripts/scrape_buyrentkenya');
-    
-    res.send(buyKenya);
-    
-});
 
 module.exports = router;

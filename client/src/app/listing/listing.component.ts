@@ -16,6 +16,9 @@ export class ListingComponent implements OnInit {
 
   ngOnInit() {
     
+    $('#nextPage').hide()
+    $('#prevPage').hide()
+
     this.page = 1;
 
     this.getListings(this.page);
@@ -26,7 +29,7 @@ export class ListingComponent implements OnInit {
   nextPage() {
 
     $('.scrape').fadeOut(300);
-    $('.loading').fadeIn(500);
+    $('.loading, #prevPage').fadeIn(500);
 
     console.log('Old page number ',this.page)
 
@@ -55,6 +58,7 @@ export class ListingComponent implements OnInit {
     this.api.listingApi(page).subscribe(
       data => {
         $('.loading').fadeOut(300);
+        $('#nextPage').fadeIn(500)
         $('.scrape').show();
         this.data = data;
         console.log('Buy rent Kenya data ',data)
