@@ -57,7 +57,7 @@ router.get('/buy-rent-kenya/plots-land-for-sale/:number', function(req, res) {
         
             // Array object d
             landData.push({
-                image: 'https://www.buyrentkenya.com'+image,
+                image: 'buyrentkenya.com'+image,
                 town: location,
                 type: type,
                 location: location,

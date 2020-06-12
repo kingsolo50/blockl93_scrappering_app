@@ -7,7 +7,7 @@ const   express = require('express'),
         path = require('path'),
         morgan = require('morgan'), 
         api = require('./routes/api'),
-        HTTP_PORT = 3000;
+        HTTP_PORT = process.env.PORT || 3000;
                 
         //* Express init
         
@@ -27,6 +27,6 @@ const   app = express();
 
         //*
 
-        app.listen(HTTP_PORT, () => {
-            console.log(`HTTP_PORT connection: ${HTTP_PORT}`);
+        app.listen(HTTP_PORT || process.env.PORT, () => {
+            console.log(`HTTP_PORT connection: ${HTTP_PORT || process.env.PORT}`);
         }); 

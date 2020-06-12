@@ -2,23 +2,29 @@
   <div class="row">
 
     <div class="col search">
-      <h1>Search</h1>
-          <small>Search by town or location or <a routerLink="/explore"><u>view all listings</u></a></small>
-          <div id="search" class="input-group mb-3 input-group-lg">          
-            <input type="text" class="form-control searchBar" name="search" type="search"
-              placeholder="e.g. Kitengella or Thika &crarr;" #searchBox
-              (blur)="onEnter(searchBox.value)" (keyup.enter)="onEnter(searchBox.value)"
-              aria-label="Text input with dropdown button">            
-          </div>     
+      <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" routerLink='/home'>
+          <img width="30%" src="../../assets/img/logo-trans.png" alt="BlockL93" class="img-fluid logo">
+        </a>
+      </nav>
+      <small>Search by town</small>
+      <div id="search" class="input-group mb-3 input-group-lg">          
+        <input  type="text" class="form-control searchBar" 
+                name="search" 
+                type="search"
+                placeholder="e.g. Kitengella or Thika &crarr;" 
+                #searchBox
+                aria-label="Text input with dropdown button">            
+      </div>  
+      <div class="col-12">
+        <button class="btn btn-sm btn-primary" id="nextPage" (click)="nextPage()">Next Page</button>
+        <button class="btn btn-sm btn-primary" id="prevPage" (click)="prevPage()">Previous Page</button>      
+      </div>            
     </div>
-    <div class="col-12 loading">
-      <h1>Loading...</h1>
-    </div>
-    <div class="col-12">
-      <button class="btn btn-primary" id="nextPage" (click)="nextPage()">Next Page</button>
-      <button class="btn btn-primary" id="prevPage" (click)="prevPage()">Previous Page</button>
-    </div>
-    <div class="col-12">
+    <div class="col-12 loading text-center">
+      <img style="width: 150px" src="https://cdn.lowgif.com/full/21b6c602c88d9d2e-loading-spinner-by-joseph-a-barrientos-dribbble.gif" class="img-fluid" alt="">
+    </div>    
+    <div class="col-12 scrape">
       <div *ngIf="data">  
         <div class="row">
           <div class="col-lg-4 col-md-4 col-sm-12" *ngFor="let p of data.data; let i = index">
@@ -41,13 +47,13 @@
                     Price: &nbsp;{{p?.price }}
                   </p>              
                 </div>
-                <div class="card-footer text-muted">
+                <!-- <div class="card-footer text-muted">
                   <div class="row">
                     <div class="col-8">
-                      <!-- <small>Posted: {{p?.created | amTimeAgo}}</small> -->
+                      <small>Posted: {{p?.created | amTimeAgo}}</small>
                     </div>
                     <div class="col-2">
-                      <!-- <i class="far fa-eye" routerLink="/product/{{ p ._id }}"></i> -->
+                      <i class="far fa-eye" routerLink="/product/{{ p ._id }}"></i>
                     </div>
                     <div class="col-2">
                       <small aria-disabled="true">
@@ -55,7 +61,7 @@
                       </small>
                     </div>
                   </div>
-                </div>
+                </div> -->
           </div>          
         </div>
       </div>

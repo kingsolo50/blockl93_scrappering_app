@@ -25,6 +25,9 @@ export class ListingComponent implements OnInit {
   // LOAD NEXT PAGE
   nextPage() {
 
+    $('.scrape').fadeOut(300);
+    $('.loading').fadeIn(500);
+
     console.log('Old page number ',this.page)
 
     this.page++
@@ -52,7 +55,8 @@ export class ListingComponent implements OnInit {
     this.api.listingApi(page).subscribe(
       data => {
         $('.loading').fadeOut(300);
-        // this.data = data;
+        $('.scrape').show();
+        this.data = data;
         console.log('Buy rent Kenya data ',data)
       }, err => {
         console.log(err)
