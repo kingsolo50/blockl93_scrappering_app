@@ -23,7 +23,25 @@ const   app = express();
 
         //* Routes
         
-        app.use('/', api);
+        app.use('/api', api);
+
+        //
+        // FRONTEND SOURCE FILES UN-COMMENT BEFORE DEPLOYMENT 
+        app.use(express.static(path.join(__dirname, 'public'))); // Home route to render angular build 
+        app.get('/', (req, res, next) => {
+            res.send('Invalid endpoint, serve.js error')        
+        });
+        //FINAL ROUTE TO BE HIT BY APP
+        app.get('*', (req, res) => {
+            res.sendFile(path.join(__dirname, 'public/index.html'));
+        });
+
+        // 404 ERROR HANDLER
+        app.use(function (req, res, next) {
+            var err = new Error('Not Found');
+            err.status = 404;
+            next(err);
+        });
 
         //*
 
