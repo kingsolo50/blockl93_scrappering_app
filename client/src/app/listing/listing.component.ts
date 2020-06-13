@@ -31,26 +31,26 @@ export class ListingComponent implements OnInit {
     $('.scrape').fadeOut(300);
     $('.loading, #prevPage').fadeIn(500);
 
-    console.log('Old page number ',this.page)
+    // console.log('Old page number ',this.page)
 
     this.page++
 
     this.getListings(this.page)
 
-    console.log('New page number ',this.page)
+    // console.log('New page number ',this.page)
 
   }
 
   // LOAD PREVIOUS PAGE
   prevPage() {
 
-    console.log('Original page number',this.page)
+    // console.log('Original page number',this.page)
     
     this.page--
 
     this.getListings(this.page)
 
-    console.log('Reversed page number ',this.page)
+    // console.log('Reversed page number ',this.page)
   }
 
   // BACKEND API CALL
@@ -61,7 +61,7 @@ export class ListingComponent implements OnInit {
         $('#nextPage').fadeIn(500)
         $('.scrape').show();
         this.data = data;
-        console.log('Buy rent Kenya data ',data)
+        // console.log('Buy rent Kenya data ',data)
       }, err => {
         console.log(err)
       }

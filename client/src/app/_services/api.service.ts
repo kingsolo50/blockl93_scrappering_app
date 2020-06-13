@@ -7,13 +7,14 @@ export class ApiService {
 
   data: any;
 
-  private apiUrl: string = `http://localhost:8000/api/buy-rent-kenya/plots-land-for-sale`;
+  private localUrl: string = `http://localhost:8000/api/buy-rent-kenya/plots-land-for-sale`;
   private webApi: string = `/api/buy-rent-kenya/plots-land-for-sale`; 
 
   constructor(private http: HttpClient) { }
 
   listingApi(page): Observable<any> {  
-    console.log('Sending page number -->',page);  
-    return this.http.get<any>( this.apiUrl + '/' + page )
+    // console.log('Sending page number -->',page);  
+    return this.http.get<any>( this.webApi + '/' + page )
   }
+
 }
