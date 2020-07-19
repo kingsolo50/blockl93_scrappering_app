@@ -41,17 +41,17 @@ router.get('/basic/:number', function(req, res) {
         // Loop through grabbing data
         data.each( function() {
         
-            const image = $(this).find('img').attr('data-src');
-            const id = $(this).find('.result-card-item').attr('id');
-            const town = $(this).find('').text().trim();
-            const location = $(this).find('.property-location').text().trim();
-            const type = $(this).find('.property-title').text().trim();
-            const info = $(this).find('.property-address').text().trim();
-            const price = $(this).find('.price').text().trim();
-            const size = $(this).find('.h-area').text().trim();
+            const image     = $(this).find('img').attr('data-src');
+            const id        = $(this).find('.result-card-item').attr('id');
+            const town      = $(this).find('').text().trim();
+            const location  = $(this).find('.property-location').text().trim();
+            const type      = $(this).find('.property-title').text().trim();
+            const info      = $(this).find('.property-address').text().trim();
+            const price     = $(this).find('.price').text().trim();
+            const size      = $(this).find('.h-area').text().trim();
             const agency    = $(this).find('.estate-agency-logo').find('img').attr('data-src');
-            const contact = $(this).find('.listing-send-whatsapp').attr('onclick');
-            const source = $(this).find('a').attr('href').trim();
+            const contact   = $(this).find('.listing-send-whatsapp').attr('onclick');
+            const source    = $(this).find('a').attr('href').trim();
         
             // Array object d
             landData.push({
