@@ -2,12 +2,12 @@ require('dotenv').config();
         
         //*
 
-const   express = require('express'),
-        cors = require('cors'),
-        path = require('path'),
-        morgan = require('morgan'), 
-        api = require('./routes/api'),
-        HTTP_PORT = process.env.PORT || 3000;
+const   express     = require('express'),
+        cors        = require('cors'),
+        path        = require('path'),
+        morgan      = require('morgan'), 
+        api         = require('./routes/api'),
+        HTTP_PORT   = process.env.PORT || 3000;
                 
         //* Express init
         
