@@ -9,13 +9,14 @@
       </nav>
       <small style="margin-left: 1.5%;">Search by town / location</small>
       <div id="search" class="input-group mb-3 input-group-lg">          
-        <input  type="text" class="form-control searchBar" 
+        <input  type="text" class="form-control searchBar"
+                (keyup.enter)="onEnter(searchBox.value)"                 
                 name="search" 
                 type="search"
                 placeholder="e.g. Kitengella or Thika &crarr;" 
                 #searchBox
                 style="margin-left: 0.8em;"
-                aria-label="Text input with dropdown button">            
+                aria-label="Text input with dropdown button">  
       </div>  
       <div class="col-12">
         <button class="btn btn-sm btn-primary" id="nextPage" (click)="nextPage()">Next Page</button>
@@ -26,14 +27,24 @@
       <img style="width: 150px" src="https://cdn.lowgif.com/full/21b6c602c88d9d2e-loading-spinner-by-joseph-a-barrientos-dribbble.gif" class="img-fluid" alt="">
     </div>    
     <div class="col-12 scrape">
-      <div *ngIf="data">  
-        <div class="row">
+      <!-- SEARCH DATA -->
+      <div class="searchData">
+        <router-outlet></router-outlet>
+      </div>
+      <!-- DATA -->
+      <div *ngIf="data" class="initData">  
+        <div class="row ">
           <div class="col-lg-4 col-md-4 col-sm-12" *ngFor="let p of data.data; let i = index">
             <div class="card" style="width: 20rem;">          
-              <!-- <img src="{{p?.image}}" class="card-img-top img-fluid p-1" alt="{{p?.town}}"> -->
+              <!-- <div *ngIf="p?.image">
+                <img src="{{p?.image}}" class="card-img-top img-fluid p-1" alt="{{p?.town}}">
+              </div> -->
+              <div *ngIf="!p?.image">
+                <img src="https://via.placeholder.com/350" class="card-img-top img-fluid p-1" alt="{{p?.town}}">
+              </div>
               <div class="card-body">
                 <p class="card-text" style="font-weight: 700;">
-                  Location: &nbsp;<u>{{ p?.town | titlecase }}</u>
+                  <span style="color: rebeccapurple;">Location:</span>&nbsp;<u style="color: orange;">{{ p?.town | titlecase }}</u>
                 </p>              
                 <small>
                 <!-- <p class="card-text">
@@ -48,13 +59,14 @@
                 </small>               
                 <p style="color: black; font-weight: 700;">
                   Price: &nbsp;{{p?.price }}
-                </p>
-                    
+                </p>                    
               </div>
               <div class="card-footer text-muted">
                 <div class="row">
-                  <div class="col">
-                    <small>Contact</small>
+                  <div class="col" *ngIf="p?.agency.length > 0">
+                    <img src="{{p?.agency}}" alt="" class="img-fluid">
+                    <!-- <a href="{{p?.contact}}">hi</a> -->
+                    <!-- <a href="{{p?.contact}}">Contact<a> -->
                   </div> 
                   <div class="col">
                     <small>Information</small>

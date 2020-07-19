@@ -17,25 +17,12 @@
       margin-top: 5% !important;
     }
 
-    /* ========================================================================== */
-    /* CAROUSEL */
-    /* ========================================================================== */
-    .carousel-inner[_ngcontent-c3],
-    .active {
-      max-height: 250px !important;
-    }
+    .jumbotron {
+      height: 100%;
 
-    .carousel-indicators {
-      display: none !important;
-    }
+      h2 {
+        font-size: unset;
+      }
 
-    .carousel {
-      a {
-        color: whitesmoke;
-      }
-      a:hover {
-        color: blue;
-      }
-      cursor: pointer;
     }
 }

@@ -1,0 +1,53 @@
+<div *ngIf="searchData">  
+    <div class="row">
+      <div class="col-12">
+        <span class="badge badge-success mt-4 mr-2">{{ term | titlecase }} &nbsp;{{ searchData.data.length }}</span><span [routerLink]="['/listings']" style="cursor: pointer;" routerLinkActive="router-link-active"  aria-hidden="true">&times;</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 col-md-4 col-sm-12" *ngFor="let p of searchData.data; let i = index">
+        <div class="card" style="width: 20rem;">          
+          <!-- <div *ngIf="p?.image">
+            <img src="{{p?.image}}" class="card-img-top img-fluid p-1" alt="{{p?.town}}">
+          </div> -->
+          <div *ngIf="!p?.image">
+            <img src="https://via.placeholder.com/350" class="card-img-top img-fluid p-1" alt="{{p?.town}}">
+          </div>
+          <div class="card-body">
+            <p class="card-text" style="font-weight: 700;">
+              <span style="color: rebeccapurple;">Location:</span>&nbsp;<u style="color: orange;">{{ p?.town | titlecase }}</u>
+            </p>              
+            <small>
+            <!-- <p class="card-text">
+              Location: &nbsp;{{ p?.location | titlecase }}
+            </p> -->
+            <p>
+              Size: &nbsp;{{p?.size }}
+            </p>
+            <p>
+              Type: &nbsp;{{p?.type }}
+            </p>
+            </small>               
+            <p style="color: black; font-weight: 700;">
+              Price: &nbsp;{{p?.price }}
+            </p>                    
+          </div>
+          <div class="card-footer text-muted">
+            <div class="row">
+              <div class="col" *ngIf="p?.agency.length > 0">
+                <img src="{{p?.agency}}" alt="" class="img-fluid">
+                <!-- <a href="{{p?.contact}}">hi</a> -->
+                <!-- <a href="{{p?.contact}}">Contact<a> -->
+              </div> 
+              <div class="col">
+                <small>Information</small>
+              </div>   
+              <div class="col">
+                <small>Share</small>
+              </div>                  
+            </div>
+          </div>
+        </div>
+      </div>          
+    </div>
+</div>

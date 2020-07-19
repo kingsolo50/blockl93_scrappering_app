@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 // IMPORTS
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+
 // COMPONENTS
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -12,6 +13,7 @@ import { HeaderComponent } from './header/header.component';
 import { ListingComponent } from './listing/listing.component';
 // SERVICES
 import { ApiService } from './_services/api.service';
+import { SearchComponent } from './listing/search/search.component';
 
 
 @NgModule({
@@ -21,7 +23,8 @@ import { ApiService } from './_services/api.service';
     PagenotfoundComponent,
     FooterComponent,
     HeaderComponent,
-    ListingComponent
+    ListingComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
